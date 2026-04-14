@@ -1,5 +1,5 @@
+import 'package:e_commerce_app/core/helper_functions/on_generate_routes.dart';
 import 'package:e_commerce_app/feature/splash/presentation/view/splash_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -14,7 +14,8 @@ class FruitHub extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+     onGenerateRoute: onGenerateRoutes,
+     initialRoute: SplashView.routeName,
     );
   }
 }
