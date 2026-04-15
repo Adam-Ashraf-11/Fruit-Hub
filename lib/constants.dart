@@ -1,0 +1,1 @@
+const hlPadding = 16.0;
