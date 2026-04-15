@@ -6,26 +6,56 @@ import 'package:e_commerce_app/feature/on_boarding/presentation/view/widgets/on_
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class OnBoardingViewBody extends StatelessWidget {
+class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({super.key});
+
+  @override
+  State<OnBoardingViewBody> createState() => _OnBoardingViewBodyState();
+}
+
+class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
+  late PageController pageController;
+  var currentPage = 0;
+  @override
+  void initState() {
+    pageController = PageController();
+    pageController.addListener(() {
+      currentPage = pageController.page!.round();
+      setState(() {});
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        OnBoardingPageView(),
+        OnBoardingPageView(pageController: pageController),
         DotsIndicator(
           dotsCount: 2,
           decorator: DotsDecorator(
-            color: Color(0XFFaeddab),
+            color: currentPage == 1
+                ? AppColors.primaryColor
+                : Color(0XFFaeddab),
             activeColor: AppColors.primaryColor,
           ),
         ),
-      Gap(29),
-        Padding(
+        Gap(29),
+        Visibility(
+          visible: currentPage == 1 ? true : false,
+          maintainAnimation: true,
+          maintainSize: true,
+          maintainState: true,
+          child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: hlPadding),
-            child: CustomAppButton(title: 'ابدأ الان', onTPressed: (){}),
-          
+            child: CustomAppButton(title: 'ابدأ الان', onTPressed: () {}),
+          ),
         ),
         Gap(43),
       ],

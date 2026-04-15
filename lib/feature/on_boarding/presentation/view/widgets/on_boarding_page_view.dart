@@ -1,13 +1,15 @@
+import 'package:e_commerce_app/core/utils/app_text_styles.dart';
 import 'package:e_commerce_app/feature/on_boarding/presentation/view/widgets/page_view_item.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPageView extends StatelessWidget {
-  const OnBoardingPageView({super.key});
-
+  const OnBoardingPageView({super.key, required this.pageController});
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: PageView(
+        controller: pageController,
         children: [
           //! Page 1
           PageViewItem(
@@ -20,11 +22,7 @@ class OnBoardingPageView extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: 'مرحبًا بك في ',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+                    style: AppTextStyles.bold23
                   ),
                   TextSpan(
                     text: 'Fruit',
@@ -50,6 +48,11 @@ class OnBoardingPageView extends StatelessWidget {
               Color.fromARGB(255, 0, 255, 34),
               BlendMode.srcATop,
             ),
+            isVisale:
+                (pageController.hasClients
+                    ? pageController.page!.round()
+                    : 0) ==
+                0,
           ),
           //! Page 2
           PageViewItem(
@@ -66,8 +69,12 @@ class OnBoardingPageView extends StatelessWidget {
             subtitle:
                 'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
             bgColor: ColorFilter.mode(Colors.blueGrey, BlendMode.srcIn),
+            isVisale:
+                (pageController.hasClients
+                    ? pageController.page!.round()
+                    : 0) !=
+                0,
           ),
-       
         ],
       ),
     );

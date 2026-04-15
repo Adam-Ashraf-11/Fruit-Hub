@@ -30,6 +30,9 @@ class FruitHub extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoutes,
       initialRoute: SplashView.routeName,
+      theme: ThemeData(
+      fontFamily: 'Cairo', 
+      ),
     );
   }
 }

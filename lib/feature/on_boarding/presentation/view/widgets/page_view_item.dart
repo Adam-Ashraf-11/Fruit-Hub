@@ -1,4 +1,3 @@
-import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:svg_flutter/svg_flutter.dart';
@@ -9,12 +8,13 @@ class PageViewItem extends StatelessWidget {
     required this.bgImage,
     required this.image,
     required this.subtitle,
-    required this.title, required this.bgColor,
+    required this.title, required this.bgColor, required this.isVisale,
   });
 
   final String bgImage, image, subtitle;
   final Widget title;
   final ColorFilter bgColor ;
+  final bool isVisale ;
 
   @override
   Widget build(BuildContext context) {
@@ -43,11 +43,14 @@ class PageViewItem extends StatelessWidget {
                     child: SvgPicture.asset(image),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text("تخط", style: TextStyle(color: Colors.black)),
+                Visibility(
+                  visible: isVisale,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text("تخط", style: TextStyle(color: Colors.black)),
+                    ),
                   ),
                 ),
               ],
