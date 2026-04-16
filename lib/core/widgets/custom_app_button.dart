@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/utils/app_colors.dart';
+import 'package:e_commerce_app/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppButton extends StatelessWidget {
@@ -6,10 +7,12 @@ class CustomAppButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.onTPressed,
+    this.radius,
   });
 
   final String title;
   final VoidCallback onTPressed;
+  final BorderRadius? radius;
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +22,14 @@ class CustomAppButton extends StatelessWidget {
       child: TextButton(
         onPressed: onTPressed,
         style: TextButton.styleFrom(
-          overlayColor:  Colors.transparent,
+          overlayColor: Colors.transparent,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: radius ?? BorderRadius.circular(16),
           ),
           backgroundColor: AppColors.primaryColor,
         ),
-        child: Text(title, style: TextStyle(color: Colors.white)),
+        child: Text(title, style: AppTextStyles.bold16.copyWith(color: Colors.white)),
       ),
     );
   }

@@ -17,6 +17,7 @@ class CustomTextFormFeild extends StatelessWidget {
       onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color: Colors.grey),
         suffixIcon: sufIcon,
         fillColor: Color(0XFFf9fbfa),
         filled: true,
