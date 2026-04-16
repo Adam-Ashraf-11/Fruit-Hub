@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/core/helper_functions/on_generate_routes.dart';
 import 'package:e_commerce_app/core/services/shared_prefrences.dart';
+import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/feature/splash/presentation/view/splash_view.dart';
 import 'package:e_commerce_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,11 @@ class FruitHub extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoutes,
       initialRoute: SplashView.routeName,
-      theme: ThemeData(fontFamily: 'Cairo'),
+      theme: ThemeData(
+        fontFamily: 'Cairo',
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+      ),
     );
   }
 }
