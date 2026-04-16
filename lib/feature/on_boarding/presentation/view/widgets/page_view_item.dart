@@ -1,3 +1,6 @@
+import 'package:e_commerce_app/constants.dart';
+import 'package:e_commerce_app/core/services/shared_prefrences.dart';
+import 'package:e_commerce_app/feature/auth/presentation/view/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:svg_flutter/svg_flutter.dart';
@@ -8,13 +11,15 @@ class PageViewItem extends StatelessWidget {
     required this.bgImage,
     required this.image,
     required this.subtitle,
-    required this.title, required this.bgColor, required this.isVisale,
+    required this.title,
+    required this.bgColor,
+    required this.isVisale,
   });
 
   final String bgImage, image, subtitle;
   final Widget title;
-  final ColorFilter bgColor ;
-  final bool isVisale ;
+  final ColorFilter bgColor;
+  final bool isVisale;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +33,8 @@ class PageViewItem extends StatelessWidget {
               children: [
                 Positioned.fill(
                   child: SvgPicture.asset(
-                   bgImage,
-                    colorFilter: bgColor ,
+                    bgImage,
+                    colorFilter: bgColor,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -48,7 +53,12 @@ class PageViewItem extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(16),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: (){
+                        Prefs.setBool(KIsBoardingViewSeen , true);
+                        
+                        Navigator.of(
+                        context,
+                      ).pushReplacementNamed(LoginView.routeName);},
                       child: Text("تخط", style: TextStyle(color: Colors.black)),
                     ),
                   ),
@@ -61,8 +71,7 @@ class PageViewItem extends StatelessWidget {
           Gap(24),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 37),
-            child: Text(subtitle ,
-            textAlign: TextAlign.center,),
+            child: Text(subtitle, textAlign: TextAlign.center),
           ),
         ],
       ),

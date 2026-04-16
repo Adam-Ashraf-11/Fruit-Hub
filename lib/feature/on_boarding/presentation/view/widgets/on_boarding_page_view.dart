@@ -49,10 +49,7 @@ class OnBoardingPageView extends StatelessWidget {
               BlendMode.srcATop,
             ),
             isVisale:
-                (pageController.hasClients
-                    ? pageController.page!.round()
-                    : 0) ==
-                0,
+                true,
           ),
           //! Page 2
           PageViewItem(
@@ -70,10 +67,7 @@ class OnBoardingPageView extends StatelessWidget {
                 'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
             bgColor: ColorFilter.mode(Colors.blueGrey, BlendMode.srcIn),
             isVisale:
-                (pageController.hasClients
-                    ? pageController.page!.round()
-                    : 0) !=
-                0,
+               false,
           ),
         ],
       ),
