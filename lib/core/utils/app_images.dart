@@ -6,9 +6,7 @@ class Assets {
   /// assets/image/svg/circle_splash-bottom.svg
   static const String imageSvgCircleSplashBottom = "assets/image/svg/circle_splash-bottom.svg";
 
-  /// Assets for imageSvgFruit Hub
-  /// assets/image/svg/Fruit Hub.png
-  static const String imageSvgFruit Hub = "assets/image/svg/Fruit Hub.png";
+
 
   /// Assets for imageSvgLogo
   /// assets/image/svg/logo.svg

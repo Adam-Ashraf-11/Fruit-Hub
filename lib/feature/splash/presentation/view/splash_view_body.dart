@@ -31,28 +31,30 @@ class _SplashViewBodyState extends State<SplashViewBody> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [SvgPicture.asset(Assets.imageSvgPlant)],
           ),
-          SizedBox(
-            height: 173,
-            width: 178,
-            child: SvgPicture.asset(Assets.imageSvgLogo),
+          Image.asset("assets/image/icons/FruitHub.png"),
+          SvgPicture.asset(
+            width: 400,
+            Assets.imageSvgCircleSplashBottom,
+            fit: BoxFit.fill,
+            colorFilter: ColorFilter.mode(
+              const Color.fromARGB(255, 9, 134, 5),
+              BlendMode.srcIn,
+            ),
           ),
-          SvgPicture.asset(Assets.imageSvgCircleSplashBottom, fit: BoxFit.fill),
         ],
       ),
     );
   }
 
-
-//! Navigation Method
+  //! Navigation Method
   void excuteNavigation() {
-
-    bool isonBoarding =Prefs.getBool(KIsBoardingViewSeen);
-    Future.delayed(const Duration(seconds: 2), () {
+    bool isonBoarding = Prefs.getBool(KIsBoardingViewSeen);
+    Future.delayed(const Duration(seconds: 4), () {
       if (isonBoarding) {
-  Navigator.pushReplacementNamed(context, LoginView.routeName);
-}else{
-  Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
-}
+        Navigator.pushReplacementNamed(context, LoginView.routeName);
+      } else {
+        Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+      }
     });
   }
 }
