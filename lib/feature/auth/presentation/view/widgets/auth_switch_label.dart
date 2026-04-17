@@ -8,7 +8,7 @@ class AuthSwitchLabel extends StatelessWidget {
   final String actionText;
   final VoidCallback? onTap;
 
-  const AuthSwitchLabel({
+  const AuthSwitchLabel({super.key, 
     required this.questionText,
     required this.actionText,
     this.onTap,
