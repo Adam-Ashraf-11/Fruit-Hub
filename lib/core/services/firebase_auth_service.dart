@@ -1,5 +1,7 @@
+import 'dart:developer';
 import 'package:e_commerce_app/core/errors/exeptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthService {
   //! Create User With Email And Password
@@ -36,6 +38,7 @@ class FirebaseAuthService {
       throw CustomExeptions(message: 'حدث خطاء غير معروف.');
     }
   }
+
   //! Create Sign In With Email And Password
   Future<User?> signInWithEmailAndPassword({
     required String email,
@@ -47,19 +50,31 @@ class FirebaseAuthService {
         password: password,
       );
       return user.user;
-    } on FirebaseException catch (e) {
+    } on FirebaseAuthException catch (e) {
       switch (e.code) {
         case 'user-not-found':
-          throw CustomExeptions(message: 'البريد الإلكتروني غير مسجل.');
+        case 'user-disabled':
+          throw CustomExeptions(
+            message: 'البريد الإلكتروني غير مسجل أو محظور.',
+          );
         case 'wrong-password':
-          throw CustomExeptions(message: 'كلمة المرور غير صحيحة.');
+        case 'invalid-credential': // أضف هذا السطر ضروري جداً
+          throw CustomExeptions(
+            message: 'البريد الإلكتروني أو كلمة المرور غير صحيحة.',
+          );
         case 'network-request-failed':
-          throw CustomExeptions(message: 'لا يوجد اتصال بالانترنت.');
+          throw CustomExeptions(message: 'تأكد من اتصالك بالانترنت.');
         default:
-          throw CustomExeptions(message: 'حدث خطاء غير معروف.');
+          log(
+            'Firebase Auth Error Code: ${e.code}',
+          ); // سيعلمك بالكود المفقود في الـ console
+          throw CustomExeptions(message: 'حدث خطأ أثناء تسجيل الدخول.');
       }
     } catch (e) {
       throw CustomExeptions(message: 'حدث خطاء غير معروف.');
     }
   }
+
+//! 
+
 }

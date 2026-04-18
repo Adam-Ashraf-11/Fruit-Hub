@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/helper_functions/snack_bar.dart';
 import 'package:e_commerce_app/feature/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/login_view_body.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,11 @@ class LoginBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
-        // TODO: implement listener
+        if (state is LoginSuccess) {
+          Navigator.of(context).pushReplacementNamed('/home');
+        } else if (state is LoginFailure) {
+          buildSnackBar(context, state.message);
+        }
       },
       builder: (context, state) {
         return ModalProgressHUD(

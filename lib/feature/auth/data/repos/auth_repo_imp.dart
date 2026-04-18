@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce_app/core/errors/exeptions.dart';
 import 'package:e_commerce_app/core/errors/failures.dart';
@@ -23,6 +24,8 @@ class AuthRepoImp extends AuthRepo {
       );
       return right(UserModel.fromFirebaseUser(user!));
     } on CustomExeptions catch (e) {
+      log('Exception in  AuthRepoImp : ${e.toString()}');
+
       return left(ServerFailure(e.message));
     }
   }
@@ -40,6 +43,9 @@ class AuthRepoImp extends AuthRepo {
       return right(UserModel.fromFirebaseUser(user!));
     } on CustomExeptions catch (e) {
       return left(ServerFailure(e.message));
+    } catch (e) {
+      log('Exception in  AuthRepoImp : ${e.toString()}');
+      return left(ServerFailure(e.toString()));
     }
   }
 }
