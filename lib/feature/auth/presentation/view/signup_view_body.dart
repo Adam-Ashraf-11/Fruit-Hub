@@ -1,4 +1,4 @@
-
+import 'package:e_commerce_app/core/helper_functions/snack_bar.dart';
 import 'package:e_commerce_app/core/utils/constants.dart';
 import 'package:e_commerce_app/core/widgets/custom_app_button.dart';
 import 'package:e_commerce_app/core/widgets/custom_pass_form_feild.dart';
@@ -21,6 +21,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   late String email, password, name;
+  late bool isAcceptTerms = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,23 +50,38 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               ),
               const Gap(16),
               CustomPassFormFeild(
-                onSaved: (v){
+                onSaved: (v) {
                   password = v!;
                 },
               ),
               Gap(16),
-              TermsAndConditionsWidget(),
+              TermsAndConditionsWidget(
+                onChanged: (value) {
+                  setState(() {
+                    isAcceptTerms = value;
+                  });
+                },
+              ),
               Gap(30),
               CustomAppButton(
                 title: 'إنشاء حساب جديد',
                 onTPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    context.read<SignupCubit>().createUserWithEmailAndPassword(
-                      email: email,
-                      password: password,
-                      name: name,
-                    );
+                    if (isAcceptTerms) {
+                      context
+                          .read<SignupCubit>()
+                          .createUserWithEmailAndPassword(
+                            email: email,
+                            password: password,
+                            name: name,
+                          );
+                    } else {
+                      buildSnackBar(
+                        context,
+                        'يجب الموافقة على الشروط والاحكام',
+                      );
+                    }
                     setState(() {
                       autovalidateMode = AutovalidateMode.always;
                     });
@@ -85,5 +101,3 @@ class _SignupViewBodyState extends State<SignupViewBody> {
     );
   }
 }
-
-
