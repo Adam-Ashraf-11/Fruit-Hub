@@ -32,7 +32,9 @@ class SignupBlocConsumer extends StatelessWidget {
         if (state is SignupSuccess) {
           Navigator.pop(context);
         } else if (state is SignupFailure) {
-
+       ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(state.message)));
         }
       },
       builder: (context, state) {
@@ -46,6 +48,3 @@ class SignupBlocConsumer extends StatelessWidget {
 }
 
 
-      //  ScaffoldMessenger.of(
-      //       context,
-      //     ).showSnackBar(SnackBar(content: Text(state.message)));
