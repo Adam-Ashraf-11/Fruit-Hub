@@ -36,4 +36,30 @@ class FirebaseAuthService {
       throw CustomExeptions(message: 'حدث خطاء غير معروف.');
     }
   }
+  //! Create Sign In With Email And Password
+  Future<User?> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      var user = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return user.user;
+    } on FirebaseException catch (e) {
+      switch (e.code) {
+        case 'user-not-found':
+          throw CustomExeptions(message: 'البريد الإلكتروني غير مسجل.');
+        case 'wrong-password':
+          throw CustomExeptions(message: 'كلمة المرور غير صحيحة.');
+        case 'network-request-failed':
+          throw CustomExeptions(message: 'لا يوجد اتصال بالانترنت.');
+        default:
+          throw CustomExeptions(message: 'حدث خطاء غير معروف.');
+      }
+    } catch (e) {
+      throw CustomExeptions(message: 'حدث خطاء غير معروف.');
+    }
+  }
 }

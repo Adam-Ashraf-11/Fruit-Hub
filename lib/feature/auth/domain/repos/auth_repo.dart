@@ -8,4 +8,10 @@ abstract class AuthRepo {
     String password,
     String name
   );
+
+   Future<Either<Failures, UserEntity>> signinWithEmailAndPassword(
+    String email,
+    String password,
+    String name
+  );
 }

@@ -54,7 +54,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   password = v!;
                 },
               ),
-              Gap(16),
+              const Gap(16),
               TermsAndConditionsWidget(
                 onChanged: (value) {
                   setState(() {
@@ -62,7 +62,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   });
                 },
               ),
-              Gap(30),
+              const Gap(30),
               CustomAppButton(
                 title: 'إنشاء حساب جديد',
                 onTPressed: () {
@@ -88,7 +88,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   }
                 },
               ),
-              Gap(26),
+              const Gap(26),
               AuthSwitchLabel(
                 questionText: 'تمتلك حساب بالفعل؟',
                 actionText: ' تسجيل دخول',
