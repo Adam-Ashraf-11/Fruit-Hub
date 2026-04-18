@@ -1,7 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:e_commerce_app/constants.dart';
 import 'package:e_commerce_app/core/services/shared_prefrences.dart';
 import 'package:e_commerce_app/core/utils/app_colors.dart';
+import 'package:e_commerce_app/core/utils/constants.dart';
 import 'package:e_commerce_app/core/widgets/custom_app_button.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/login_view.dart';
 import 'package:e_commerce_app/feature/on_boarding/presentation/view/widgets/on_boarding_page_view.dart';

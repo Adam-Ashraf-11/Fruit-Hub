@@ -5,14 +5,22 @@ class CustomTextFormFeild extends StatelessWidget {
     super.key,
     required this.hintText,
     this.sufIcon,
-    this.keyboardType,
+    this.keyboardType, this.onSaved, 
   });
   final String hintText;
   final Widget? sufIcon;
   final TextInputType? keyboardType;
+ final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved:onSaved ,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'هذا الحقل مطلوب';
+        }
+        return null;
+      },
       keyboardType: keyboardType,
       onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
       decoration: InputDecoration(

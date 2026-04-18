@@ -1,7 +1,7 @@
-import 'package:e_commerce_app/constants.dart';
 import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/core/utils/app_text_styles.dart';
+import 'package:e_commerce_app/core/utils/constants.dart';
 import 'package:e_commerce_app/core/widgets/custom_app_button.dart';
 import 'package:e_commerce_app/core/widgets/custom_text_form_feild.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/signup_view.dart';

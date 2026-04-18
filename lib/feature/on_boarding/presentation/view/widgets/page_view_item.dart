@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/constants.dart';
 import 'package:e_commerce_app/core/services/shared_prefrences.dart';
+import 'package:e_commerce_app/core/utils/constants.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';

@@ -7,7 +7,9 @@ import 'package:e_commerce_app/feature/auth/domain/entities/user_entitiy.dart';
 import 'package:e_commerce_app/feature/auth/domain/repos/auth_repo.dart';
 
 class AuthRepoImp extends AuthRepo {
+
   final FirebaseAuthService firebaseAuthService;
+
   AuthRepoImp({required this.firebaseAuthService});
   @override
   Future<Either<Failures, UserEntity>> createUserWithEmailAndPassword(

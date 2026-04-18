@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/helper_functions/on_generate_routes.dart';
+import 'package:e_commerce_app/core/services/get_it_service.dart';
 import 'package:e_commerce_app/core/services/shared_prefrences.dart';
 import 'package:e_commerce_app/core/utils/app_colors.dart';
 import 'package:e_commerce_app/feature/splash/presentation/view/splash_view.dart';
@@ -15,6 +16,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Prefs.init();
+  setupGetit();
   runApp(FruitHub());
 }
 
