@@ -1,6 +1,7 @@
 
 import 'package:e_commerce_app/core/utils/constants.dart';
 import 'package:e_commerce_app/core/widgets/custom_app_button.dart';
+import 'package:e_commerce_app/core/widgets/custom_pass_form_feild.dart';
 import 'package:e_commerce_app/core/widgets/custom_text_form_feild.dart';
 import 'package:e_commerce_app/feature/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/widgets/auth_switch_label.dart';
@@ -47,13 +48,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 keyboardType: TextInputType.visiblePassword,
               ),
               const Gap(16),
-              CustomTextFormFeild(
-                onSaved: (v) {
+              CustomPassFormFeild(
+                onSaved: (v){
                   password = v!;
                 },
-                hintText: 'كلمة المرور',
-                keyboardType: TextInputType.visiblePassword,
-                sufIcon: Icon(Icons.remove_red_eye, color: Colors.grey),
               ),
               Gap(16),
               TermsAndConditionsWidget(),
@@ -87,3 +85,5 @@ class _SignupViewBodyState extends State<SignupViewBody> {
     );
   }
 }
+
+
