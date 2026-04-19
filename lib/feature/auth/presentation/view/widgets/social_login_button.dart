@@ -19,9 +19,12 @@ class SocialLoginButton extends StatelessWidget {
     return SizedBox(
       height: 56,
       width: double.infinity,
-      child: TextButton(
-        style: TextButton.styleFrom(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16) ,side: BorderSide(color: Color(0xFFdddfde))) ,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16) ,side: BorderSide(color: Color(0xFFdddfde))),
+          shadowColor: Colors.grey,
+          elevation: 5,    
+          
         ),
         onPressed: onpressed,
         child: ListTile(

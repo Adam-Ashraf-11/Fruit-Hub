@@ -97,15 +97,11 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               ),
               const Gap(16),
               SocialLoginButton(
-                image: Assets.imageSvgApple,
-                title: 'تسجيل بواسطة أبل',
-                onpressed: () {},
-              ),
-              const Gap(16),
-              SocialLoginButton(
                 image: Assets.imageSvgFacebook,
                 title: 'تسجيل بواسطة فيسبوك',
-                onpressed: () {},
+                onpressed: () {
+                  context.read<LoginCubit>().loginWithFacebook();
+                },
               ),
             ],
           ),

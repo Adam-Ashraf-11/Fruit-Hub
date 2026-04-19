@@ -57,10 +57,21 @@ class AuthRepoImp extends AuthRepo {
       if (user != null) {
         return right(UserModel.fromFirebaseUser(user));
       } else {
-        return left(ServerFailure('حدث خطاء غير معروف'));
+        return left(ServerFailure('حدث خطاء في تسجيل الدخول '));
       }
     } on CustomExeptions catch (e) {
       return left(ServerFailure(e.message));
+    }
+  }
+
+  @override
+  Future<Either<Failures, UserEntity>> signinWithFacebook() async {
+    try {
+      var user = await firebaseAuthService.signInWithFacebook();
+      return right(UserModel.fromFirebaseUser(user));
+        } catch (e) {
+      log('Exception in  AuthRepoImp : ${e.toString()}');
+      return left(ServerFailure(e.toString()));
     }
   }
 }
