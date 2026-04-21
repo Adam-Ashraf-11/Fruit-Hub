@@ -24,6 +24,7 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
           onChanged: (value) {
             setState(() {
               isAccepted = value!;
+              widget.onChanged(value);
             });
           },
           shape: RoundedRectangleBorder(
