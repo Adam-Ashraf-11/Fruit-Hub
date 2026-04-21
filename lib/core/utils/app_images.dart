@@ -18,9 +18,17 @@ class Assets {
   /// assets/image/svg/google.svg
   static const String imageSvgGoogle = "assets/image/svg/google.svg";
 
+  /// Assets for imageSvgImageicon
+  /// assets/image/svg/imageicon.png
+  static const String imageSvgImageicon = "assets/image/svg/imageicon.png";
+
   /// Assets for imageSvgLogo
   /// assets/image/svg/logo.svg
   static const String imageSvgLogo = "assets/image/svg/logo.svg";
+
+  /// Assets for imageSvgNotification
+  /// assets/image/svg/notification.png
+  static const String imageSvgNotification = "assets/image/svg/notification.png";
 
   /// Assets for imageSvgPageviewBg1
   /// assets/image/svg/pageview_bg1.svg

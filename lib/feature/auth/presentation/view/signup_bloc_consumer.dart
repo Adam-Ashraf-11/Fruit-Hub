@@ -1,7 +1,6 @@
 import 'package:e_commerce_app/core/helper_functions/snack_bar.dart';
 import 'package:e_commerce_app/feature/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:e_commerce_app/feature/auth/presentation/view/signup_view_body.dart';
-import 'package:e_commerce_app/feature/home/presentation/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -15,7 +14,7 @@ class SignupBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is SignupSuccess) {
           buildSnackBar(context, ' login Successfully ');
-          Navigator.of(context).pushReplacementNamed(HomeView.routeName);
+          Navigator.pop(context);
         } else if (state is SignupFailure) {
           buildSnackBar(context, state.message);
         }
