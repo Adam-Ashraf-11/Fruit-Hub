@@ -57,5 +57,13 @@ class Assets {
   /// Assets for imageSvgSearch
   /// assets/image/svg/search.svg
   static const String imageSvgSearch = "assets/image/svg/search.svg";
+
+  /// Assets for imageSvgShape
+  /// assets/image/svg/shape.svg
+  static const String imageSvgShape = "assets/image/svg/shape.svg";
+
+  /// Assets for imageSvgWatermelontest
+  /// assets/image/svg/watermelontest.png
+  static const String imageSvgWatermelontest = "assets/image/svg/watermelontest.png";
 }
 
