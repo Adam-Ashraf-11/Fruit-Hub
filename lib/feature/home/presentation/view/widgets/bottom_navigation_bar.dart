@@ -1,4 +1,6 @@
+import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:svg_flutter/svg.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({super.key});
@@ -23,8 +25,28 @@ class CustomBottomNavigationBar extends StatelessWidget {
           ),
         ],
       ),
-      // يمكنك إضافة الـ child هنا (مثل Row يحتوي على الأيقونات)
-      child: const SizedBox(height: 80), 
+      child: SizedBox(
+        height: 80,
+        child: InActiveIcon(icon: Assets.imageNavigationAppbarOutlineHome)),
     );
+  }
+}
+
+class InActiveIcon extends StatelessWidget {
+  const InActiveIcon({super.key, required this.icon});
+ final String icon;
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(icon);
+  }
+}
+
+class ActiveIcon extends StatelessWidget {
+  const ActiveIcon({super.key, required this.icon});
+ final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(icon);
   }
 }

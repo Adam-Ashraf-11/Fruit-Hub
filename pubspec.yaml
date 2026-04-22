@@ -37,6 +37,8 @@ flutter:
   assets:
     - assets/image/svg/
     - assets/image/icons/
+    - assets/image/navigation_appbar/bold/
+    - assets/image/navigation_appbar/outline/
   fonts:
     - family: Cairo
       fonts:
@@ -50,7 +52,7 @@ flutter_launcher_icons:
   min_sdk_android: 21
 
 flutter_assets:
-  assets_path: assets/image/svg
+  assets_path: assets/image
   output_path: lib/core/utils
   filename: app_images.dart
   field_prefix: null

@@ -2,6 +2,46 @@
 class Assets {
   Assets._();
   
+  /// Assets for imageIconsAppIcon
+  /// assets/image/icons/appIcon.png
+  static const String imageIconsAppIcon = "assets/image/icons/appIcon.png";
+
+  /// Assets for imageIconsFruitHub
+  /// assets/image/icons/FruitHub.png
+  static const String imageIconsFruitHub = "assets/image/icons/FruitHub.png";
+
+  /// Assets for imageNavigationAppbarBoldElement3
+  /// assets/image/navigation_appbar/bold/element-3.svg
+  static const String imageNavigationAppbarBoldElement3 = "assets/image/navigation_appbar/bold/element-3.svg";
+
+  /// Assets for imageNavigationAppbarBoldHome
+  /// assets/image/navigation_appbar/bold/home.svg
+  static const String imageNavigationAppbarBoldHome = "assets/image/navigation_appbar/bold/home.svg";
+
+  /// Assets for imageNavigationAppbarBoldShoppingCart
+  /// assets/image/navigation_appbar/bold/shopping-cart.svg
+  static const String imageNavigationAppbarBoldShoppingCart = "assets/image/navigation_appbar/bold/shopping-cart.svg";
+
+  /// Assets for imageNavigationAppbarBoldUser
+  /// assets/image/navigation_appbar/bold/user.svg
+  static const String imageNavigationAppbarBoldUser = "assets/image/navigation_appbar/bold/user.svg";
+
+  /// Assets for imageNavigationAppbarOutlineHome
+  /// assets/image/navigation_appbar/outline/home.svg
+  static const String imageNavigationAppbarOutlineHome = "assets/image/navigation_appbar/outline/home.svg";
+
+  /// Assets for imageNavigationAppbarOutlineProduct
+  /// assets/image/navigation_appbar/outline/product.svg
+  static const String imageNavigationAppbarOutlineProduct = "assets/image/navigation_appbar/outline/product.svg";
+
+  /// Assets for imageNavigationAppbarOutlineShoppingCart
+  /// assets/image/navigation_appbar/outline/shopping-cart.svg
+  static const String imageNavigationAppbarOutlineShoppingCart = "assets/image/navigation_appbar/outline/shopping-cart.svg";
+
+  /// Assets for imageNavigationAppbarOutlineUser
+  /// assets/image/navigation_appbar/outline/user.svg
+  static const String imageNavigationAppbarOutlineUser = "assets/image/navigation_appbar/outline/user.svg";
+
   /// Assets for imageSvgApple
   /// assets/image/svg/apple.svg
   static const String imageSvgApple = "assets/image/svg/apple.svg";
