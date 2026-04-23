@@ -2,6 +2,11 @@
 import 'package:flutter/material.dart';
 
 abstract class AppTextStyles {
+   static TextStyle semiBold11 = TextStyle(
+   fontWeight: FontWeight.w600,
+   fontSize: 11,
+   color: Colors.black,
+ );
 
  static TextStyle semiBold13 = TextStyle(
    fontWeight: FontWeight.w600,
